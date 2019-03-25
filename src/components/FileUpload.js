@@ -96,20 +96,22 @@ export class FileUpload extends Component {
     
     return (
               <div>
-                  <h1> {this.state.time}.</h1>
-                  {this.state.modele&&(
+                 {this.state.modele&&(
                       <div className="model" >               
                         <img src={this.state.url} alt=""/>
                         <i class="far fa-times-circle" onClick={this.closeModel}/>
                         <div className="bgDiv"></div>
                       </div>
                     )}
-                  {this.state.cameraOn&&
-                 <Camera onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri); } } />}
+                  
                  
-                <div className=" pt-3">
+                <div className="container pt-3">
                   <div className="row">
                     <div className="col-12">
+                    <h1> {this.state.time}.</h1>
+                 
+                  {this.state.cameraOn&&
+                 <Camera onTakePhoto = { (dataUri) => { this.onTakePhoto(dataUri); } } />}
                       <div className= {this.state.cameraOn?"btn btn-danger  btn-block mb-3":"btn  btn-primary btn-block mb-3"} onClick={this.openCamera}>{this.state.cameraOn?'Close Camera':'Capture'} </div>
                       <div className="custom-file">
                           <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg" onChange={(e)=>this.handleChange(e)}/>    

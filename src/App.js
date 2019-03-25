@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <section className="container" >  
+        <section className=" " >  
           <FileUpload />
         </section>
       </div>
